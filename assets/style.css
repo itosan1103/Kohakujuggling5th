@@ -1,0 +1,275 @@
+/* ==========================================================================
+   第5回 紅白ジャグリング大会 — スタイル（案C：深紅×オフホワイト）
+   本文・イベント名＝Shippori Mincho（明朝）
+   セクション見出し＝Yuji Syuku（楷書）
+   数字・英字＝Cormorant Garamond
+========================================================================== */
+:root{
+  --deep:   #b11226;   /* 深紅 */
+  --deep2:  #8c0e1d;   /* 濃深紅 */
+  --gold:   #a8821f;   /* 金（白の代わり／明色地でも読める濃いめの金） */
+  --gold2:  #c8a24a;   /* 明るい金（濃色地・アクセント用） */
+  --off:    #faf7f3;   /* オフホワイト（背景） */
+  --white:  #ffffff;
+  --ink:    #1c1c1e;   /* 本文 */
+  --sub:    #7a7a7e;   /* 補助テキスト */
+  --line:   #e6ded3;   /* 罫線 */
+  --line2:  #efe9e0;
+  --hh: 56px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{
+  background:var(--off);
+  color:var(--ink);
+  font-family:'Shippori Mincho',serif;
+  font-size:15px;
+  line-height:1.9;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+a{color:var(--deep);text-decoration:none;}
+a:hover{color:var(--deep2);text-decoration:underline;}
+p{margin-bottom:10px;}
+ul,ol{padding-left:1.4em;}
+li{margin-bottom:8px;}
+
+/* ---------- レイアウトユーティリティ ---------- */
+.container{max-width:960px;margin:0 auto;padding:0 20px;position:relative;z-index:1;}
+.section-block{padding:52px 0;border-bottom:1px solid var(--line);}
+.section-block.alt{background:var(--white);}
+
+/* ---------- セクション見出し（楷書） ---------- */
+.sec-head{margin-bottom:30px;}
+.sec-head .ja{
+  font-family:'Yuji Syuku',serif;font-weight:400;
+  font-size:clamp(26px,4.6vw,40px);letter-spacing:.06em;line-height:1.25;
+  position:relative;display:inline-block;padding-bottom:12px;
+}
+.sec-head .ja::after{
+  content:'';position:absolute;left:0;bottom:0;width:56px;height:4px;background:var(--deep);
+}
+.sec-head .ja .accent{color:var(--deep);}
+
+/* ==========================================================================
+   ヘッダー・ナビ
+========================================================================== */
+header{
+  position:sticky;top:0;z-index:300;
+  background:rgba(250,247,243,.92);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);height:var(--hh);
+}
+.header-inner{
+  max-width:960px;margin:0 auto;padding:0 20px;height:100%;
+  display:flex;align-items:center;justify-content:space-between;position:relative;z-index:1;
+}
+.header-logo{
+  display:flex;align-items:center;gap:10px;
+  font-family:'Shippori Mincho',serif;font-size:clamp(14px,3.6vw,16px);font-weight:800;
+  letter-spacing:0;color:var(--ink);line-height:1.2;min-width:0;
+  font-feature-settings:"palt" 1;  /* 全角アキを詰める（紅・白まわりの余白対策） */
+}
+.header-logo:hover{color:var(--ink);text-decoration:none;}
+/* ヘッダーのロゴ画像スロット（画像が無ければJSで非表示） */
+.header-logo-img{height:34px;width:auto;flex-shrink:0;display:block;}
+.header-logo-text{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+
+/* ロゴ内「紅白」：紅＝深紅／白＝メタリックな金 */
+.ko-red{color:var(--deep);}
+.ko-gold{
+  background:linear-gradient(180deg,#d8ba63 0%,#b8912e 48%,#8f6d16 100%);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:var(--gold); /* 非対応時のフォールバック */
+}
+
+/* ---------- PCナビ（ドロップダウン） ---------- */
+.nav{display:none;}
+.nav-item{position:relative;height:100%;display:flex;align-items:center;}
+.nav-parent{
+  display:flex;align-items:center;gap:6px;height:100%;padding:0 16px;
+  color:var(--ink);font-family:inherit;font-size:13px;letter-spacing:.06em;font-weight:600;
+  background:none;border:none;cursor:pointer;transition:color .2s,background .2s;
+}
+.nav-parent:hover,.nav-item:hover .nav-parent{color:var(--deep);background:rgba(177,18,38,.05);}
+.nav-parent .caret{width:7px;height:7px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);margin-top:-3px;transition:transform .2s;opacity:.7;}
+.nav-item:hover .nav-parent .caret{transform:rotate(225deg);margin-top:2px;}
+.dropdown{
+  position:absolute;top:var(--hh);left:50%;transform:translateX(-50%) translateY(8px);
+  min-width:210px;background:var(--white);border:1px solid var(--line);border-radius:12px;
+  box-shadow:0 18px 44px rgba(0,0,0,.14);padding:8px;
+  opacity:0;visibility:hidden;transition:opacity .2s,transform .2s;
+}
+.nav-item:hover .dropdown{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);}
+.dropdown::before{content:'';position:absolute;top:-14px;left:0;right:0;height:14px;}
+.dropdown a{
+  display:block;padding:12px 14px;border-radius:8px;
+  font-size:14px;font-weight:600;color:var(--ink);transition:background .2s,color .2s;white-space:nowrap;
+}
+.dropdown a:hover{background:rgba(177,18,38,.06);color:var(--deep);text-decoration:none;}
+
+.hamburger{
+  display:flex;flex-direction:column;justify-content:center;gap:5px;
+  width:44px;height:44px;cursor:pointer;background:none;border:none;padding:0 8px;
+}
+.hamburger span{display:block;width:24px;height:1.5px;background:var(--ink);transition:transform .3s,opacity .3s;}
+.hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+
+/* ---------- モバイルドロワー（アコーディオン） ---------- */
+.nav-drawer{
+  position:fixed;top:var(--hh);left:0;right:0;
+  background:rgba(255,255,255,.99);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line);z-index:290;
+  transform:translateY(-120%);transition:transform .35s cubic-bezier(.4,0,.2,1);
+  padding:6px 0 22px;max-height:calc(100vh - var(--hh));overflow-y:auto;
+}
+.nav-drawer.open{transform:translateY(0);}
+.acc-parent{
+  width:100%;display:flex;align-items:center;justify-content:space-between;
+  padding:16px 24px;background:none;border:none;border-bottom:1px solid var(--line2);
+  color:var(--ink);font-family:inherit;font-size:16px;font-weight:700;letter-spacing:.06em;cursor:pointer;
+}
+.acc-parent .caret{width:9px;height:9px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);transition:transform .25s;opacity:.6;}
+.acc-parent.open{color:var(--deep);}
+.acc-parent.open .caret{transform:rotate(225deg);}
+.acc-panel{max-height:0;overflow:hidden;transition:max-height .3s ease;background:rgba(177,18,38,.02);}
+.acc-panel a{display:block;padding:13px 24px 13px 40px;color:var(--ink);font-size:14.5px;border-bottom:1px solid var(--line2);}
+.acc-panel a:last-child{border-bottom:none;}
+.acc-panel a:active{background:rgba(177,18,38,.08);}
+
+/* ==========================================================================
+   HERO
+========================================================================== */
+.hero{
+  position:relative;padding:9vh 20px 8vh;overflow:hidden;
+  border-bottom:1px solid var(--line);
+}
+.hero::before{  /* 上端の深紅ライン */
+  content:'';position:absolute;top:0;left:0;right:0;height:8px;background:var(--deep);
+}
+.hero-inner{position:relative;z-index:2;max-width:960px;margin:0 auto;}
+/* ヒーローのロゴ画像スロット（画像が無ければJSで非表示） */
+.hero-logo{margin-bottom:26px;}
+.hero-logo-img{height:clamp(88px,20vw,150px);width:auto;display:block;}
+.hero-no{
+  font-size:clamp(14px,2vw,20px);font-weight:600;letter-spacing:.3em;color:var(--sub);margin-bottom:14px;
+}
+.hero-title{
+  font-family:'Shippori Mincho',serif;font-weight:800;
+  font-size:clamp(38px,8vw,104px);line-height:1.08;letter-spacing:.02em;
+}
+.hero-title .ko{color:var(--deep);}
+.hero-bottom{
+  margin-top:40px;display:flex;align-items:flex-end;justify-content:space-between;
+  gap:24px;flex-wrap:wrap;
+}
+.hero-meta{font-size:clamp(14px,1.6vw,17px);line-height:1.95;font-weight:500;}
+.hero-meta b{color:var(--deep);}
+.hero-cta-btn{
+  display:inline-block;background:var(--deep);color:var(--white);
+  font-family:'Shippori Mincho',serif;font-weight:700;
+  padding:15px 42px;font-size:15px;letter-spacing:.08em;border-radius:100px;white-space:nowrap;
+  transition:background .2s;
+}
+.hero-cta-btn:hover{background:var(--deep2);color:var(--white);text-decoration:none;}
+
+/* ==========================================================================
+   大会概要テーブル
+========================================================================== */
+.overview-table{width:100%;border-collapse:collapse;border:1px solid var(--line);margin-top:8px;background:var(--white);}
+.overview-table tr{border-bottom:1px solid var(--line);}
+.overview-table tr:last-child{border-bottom:none;}
+.overview-table th{
+  width:96px;padding:15px 14px;font-size:13px;font-weight:600;letter-spacing:.1em;
+  color:var(--deep);text-align:left;vertical-align:top;background:rgba(177,18,38,.03);
+  border-right:1px solid var(--line);white-space:nowrap;font-family:'Shippori Mincho',serif;
+}
+.overview-table td{padding:15px 16px;font-family:'Shippori Mincho',serif;font-size:15px;font-weight:500;line-height:1.7;vertical-align:top;}
+.overview-table td small{color:var(--sub);font-size:12px;}
+
+/* ==========================================================================
+   コンセプト
+========================================================================== */
+.concept-box{border:1px solid var(--line);border-left:4px solid var(--deep);background:var(--white);padding:30px 24px;margin-top:8px;}
+.concept-tagline{
+  font-family:'Yuji Syuku',serif;font-weight:400;
+  font-size:clamp(22px,5vw,32px);color:var(--deep);margin-bottom:20px;line-height:1.4;letter-spacing:.04em;
+}
+.concept-box p{line-height:2;}
+.concept-box p:last-child{margin-bottom:0;}
+.concept-box strong{color:var(--deep);font-weight:700;}
+
+/* ==========================================================================
+   CTA（出場者向け／観覧者向け）
+========================================================================== */
+.cta-row{display:flex;flex-direction:column;align-items:center;gap:12px;margin-top:26px;}
+.cta-btn{
+  display:inline-block;padding:16px 40px;background:var(--deep);color:var(--white);
+  font-family:'Shippori Mincho',serif;font-size:15px;font-weight:700;letter-spacing:.08em;
+  text-align:center;border-radius:100px;transition:background .2s;width:100%;max-width:320px;
+}
+.cta-btn:hover{background:var(--deep2);color:var(--white);text-decoration:none;}
+.cta-btn.outline{background:transparent;border:1.5px solid var(--deep);color:var(--deep);}
+.cta-btn.outline:hover{background:rgba(177,18,38,.06);color:var(--deep);}
+.cta-btn.disabled{background:var(--line);color:var(--sub);pointer-events:none;cursor:not-allowed;}
+
+/* ==========================================================================
+   フッター
+========================================================================== */
+footer{padding:44px 0 28px;text-align:center;background:var(--off);color:var(--sub);position:relative;border-top:1px solid var(--line);}
+footer::before{content:'';position:absolute;top:-1px;left:0;right:0;height:4px;background:var(--deep);}
+.footer-logo{font-family:'Shippori Mincho',serif;font-size:19px;font-weight:800;color:var(--ink);margin-bottom:6px;letter-spacing:0;font-feature-settings:"palt" 1;}
+.footer-links{display:flex;justify-content:center;flex-wrap:wrap;gap:4px 14px;margin-bottom:20px;margin-top:18px;}
+.footer-links a{font-size:12px;color:var(--sub);padding:4px;}
+.footer-links a:hover{color:var(--deep);text-decoration:none;}
+.copyright{font-size:11px;color:var(--sub);letter-spacing:.08em;}
+
+/* ==========================================================================
+   フェードイン
+========================================================================== */
+.fade-in{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;}
+.fade-in.visible{opacity:1;transform:none;}
+@media (prefers-reduced-motion: reduce){
+  .fade-in{opacity:1;transform:none;transition:none;}
+  html{scroll-behavior:auto;}
+}
+
+/* ==========================================================================
+   レスポンシブ
+========================================================================== */
+/* ---------- スマホ（≤479px）：詰まりやすい箇所を微調整 ---------- */
+@media (max-width:479px){
+  body{font-size:14px;}
+  .hero{padding:7vh 18px 6vh;}
+  .hero-bottom{flex-direction:column;align-items:stretch;gap:20px;}
+  .hero-cta-btn{text-align:center;}
+  .cta-btn{max-width:none;}
+  .footer-links{gap:2px 10px;}
+}
+
+/* ---------- 小型タブレット（≥600px） ---------- */
+@media (min-width:600px){
+  .container{padding:0 32px;}
+  .overview-table th{width:110px;}
+}
+
+/* ---------- タブレット／デスクトップ（≥768px） ---------- */
+@media (min-width:768px){
+  :root{--hh:60px;}
+  .section-block{padding:64px 0;}
+  .cta-row{flex-direction:row;justify-content:center;flex-wrap:wrap;}
+  .cta-btn{width:auto;min-width:220px;}
+}
+
+/* ---------- ナビをドロップダウン表示に切替（≥820px） ---------- */
+@media (min-width:820px){
+  .nav{display:flex;align-items:center;height:100%;}
+  .hamburger{display:none;}
+  .nav-drawer{display:none !important;}
+}
+
+@media (min-width:960px){.container{padding:0 40px;}}
