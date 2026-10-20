@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>競技概要 | 第5回紅白ジャグリング大会</title>
+<meta name="description" content="第5回紅白ジャグリング大会の競技概要。競技ルール、紅組・白組の分け方、観客投票、演技時間、使用楽曲、照明、勝敗・表彰、エントリー方法・エントリー料について。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Yuji+Syuku&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;1,300;1,500&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/aja-logo.PNG" type="image/png">
+<link rel="stylesheet" href="assets/style.css?v=20260728">
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="header-logo">
+      <!-- ▼ ロゴ完成後：assets/logo.svg を配置すれば表示。無ければ自動で非表示 ▼ -->
+      <img class="header-logo-img" src="assets/logo.svg" alt="第5回紅白ジャグリング大会 ロゴ" onerror="this.remove()">
+      <span class="header-logo-text">第5回<span class="ko-red">紅</span><span class="ko-gold">白</span>ジャグリング大会</span>
+    </a>
+    <nav class="nav">
+      <div class="nav-item">
+        <button class="nav-parent">MENU<span class="caret"></span></button>
+        <div class="dropdown">
+          <a href="about.html">運営</a>
+          <a href="contact.html">お問い合わせ</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-parent">出場する<span class="caret"></span></button>
+        <div class="dropdown">
+          <a href="rule.html" class="current">競技概要</a>
+          <a href="entry.html">出場エントリー</a>
+          <a href="performer.html">出場者一覧</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-parent">観覧する<span class="caret"></span></button>
+        <div class="dropdown">
+          <a href="performer.html">出場者一覧</a>
+          <a href="timetable.html">スケジュール</a>
+          <a href="access.html">アクセス</a>
+          <a href="goods.html">物販・出店</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-parent">応援する<span class="caret"></span></button>
+        <div class="dropdown">
+          <a href="sponsor.html">ご協賛・カンパ</a>
+          <a href="goods.html">物販・出店</a>
+        </div>
+      </div>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ========== MOBILE DRAWER（アコーディオン） ========== -->
+<nav class="nav-drawer" id="drawer" aria-hidden="true">
+  <button class="acc-parent" data-acc>MENU<span class="caret"></span></button>
+  <div class="acc-panel">
+    <a href="about.html">運営</a>
+    <a href="contact.html">お問い合わせ</a>
+  </div>
+  <button class="acc-parent" data-acc>出場する<span class="caret"></span></button>
+  <div class="acc-panel">
+    <a href="rule.html">競技概要</a>
+    <a href="entry.html">出場エントリー</a>
+    <a href="performer.html">出場者一覧</a>
+  </div>
+  <button class="acc-parent" data-acc>観覧する<span class="caret"></span></button>
+  <div class="acc-panel">
+    <a href="performer.html">出場者一覧</a>
+    <a href="timetable.html">スケジュール</a>
+    <a href="access.html">アクセス</a>
+    <a href="goods.html">物販・出店</a>
+  </div>
+  <button class="acc-parent" data-acc>応援する<span class="caret"></span></button>
+  <div class="acc-panel">
+    <a href="sponsor.html">ご協賛・カンパ</a>
+    <a href="goods.html">物販・出店</a>
+  </div>
+</nav>
+
+<!-- ========== PAGE HERO ========== -->
+<section class="page-hero page-hero--center">
+  <div class="page-hero-inner">
+    <h1 class="page-hero-title page-hero-title--plain">競技概要</h1>
+  </div>
+</section>
+
+<!-- ========== BREADCRUMB ========== -->
+<nav class="breadcrumb" aria-label="パンくずリスト">
+  <a href="index.html">HOME</a>
+  <span class="sep">›</span>
+  <span class="current">競技概要</span>
+</nav>
+
+<!-- ========== PDFダウンロード ========== -->
+<section class="section-block" style="padding-top:26px;padding-bottom:26px;border-bottom:none">
+  <div class="container">
+    <div class="pdf-box">
+      <p>競技概要はPDFでもご確認いただけます。<small>このページと同じ内容です。PDFは別タブで開きます。</small></p>
+      <!-- ▼ Googleドライブの共有リンクに差し替えてください（下記URLはダミー）▼ -->
+      <a href="assets/pdf/【公開用】第5回紅白ジャグリング大会_競技概要.pdf" target="_blank" rel="noopener" class="pdf-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l4 4v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v4h4"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="16" x2="13" y2="16"/></svg>
+        PDFで見る
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 1. 競技ルール ========== -->
+<section class="section-block" style="padding-top:20px">
+  <div class="container fade-in">
+    <div class="sec-head">
+      <div class="ja"><span class="accent">競技</span>ルール</div>
+    </div>
+
+    <p class="sub-head">1-1. 基本ルール</p>
+    <p>大会出場者は「<strong style="color:var(--deep)">紅組</strong>」と「<strong style="color:var(--gold)">白組</strong>」の2組に分かれて、団体戦を実施します。両組に各13ブロック程を割り当てます。ただし、総エントリー状況によりブロック数は増減する場合があります（表-1）。</p>
+    <p>勝敗は観客投票にて決定します。各ブロック終了後に投票を行い、全ブロック終了後に総合得票点数を算出し、より多くの点数を獲得した組を勝利とします。投票の項目は「難易度」「演技構成」「好み」の3項目。それぞれ1票につき、「難易度」「演技構成」は2点、「好み」は1点とします。項目ごとにどちらの組が全体的に優れているかを鑑みて投票します（表-2）。</p>
+
+    <div class="rule-table-wrap">
+      <table class="rule-table table-3col">
+        <caption>表-1 各ブロックの振り分け例</caption>
+        <thead>
+          <tr><th>ブロック</th><th class="th-red">紅組</th><th class="th-white">白組</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Aブロック</td><td>3組</td><td>3組</td></tr>
+          <tr><td>Bブロック</td><td>3組</td><td>3組</td></tr>
+          <tr><td>Cブロック</td><td>3組</td><td>3組</td></tr>
+          <tr><td>Dブロック</td><td>4組</td><td>4組</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="rule-table-wrap">
+      <table class="rule-table table-3col">
+        <caption>表-2 各ブロックの観客投票の得点例（Aブロックの例）</caption>
+        <thead>
+          <tr><th>Aブロック</th><th class="th-red">紅組</th><th class="th-white">白組</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>難易度（2点）</td><td></td><td class="mark">○</td></tr>
+          <tr><td>演技構成（2点）</td><td></td><td class="mark">○</td></tr>
+          <tr><td>好み（1点）</td><td class="mark">○</td><td></td></tr>
+          <tr><td><strong>得点</strong></td><td><strong>1点</strong></td><td><strong>4点</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="sub-head">1-2. 紅組・白組の分け方</p>
+    <p>エントリー時に演技のコンセプトや大会の出場歴、入賞歴をヒアリングします。その結果を元に、なるべく各ブロックの実力が公平になるよう、運営側で組分けを実施します。</p>
+    <p>なお、<strong>トリプルエントリー制度</strong>（詳細は<a href="entry.html">出場エントリー</a>のページをご参照ください）を利用してエントリーした3組は、同じブロック・同じ組の出場者として配置します。なお、紅組・白組の所属は、各出場者の演技内容等を踏まえ、運営側で公平になるよう決定します。</p>
+
+    <p class="sub-head">1-3. 観客投票および各投票項目の説明</p>
+    <p>ブロックごとに観客投票を実施します。各ブロックの出場者全員の演技を観ていなければ、そのブロックへの投票権はないものとします（表-3）。</p>
+
+    <div class="rule-table-wrap">
+      <table class="rule-table">
+        <caption>表-3 Aブロックの途中から演技を観た場合</caption>
+        <thead>
+          <tr><th>ブロック</th><th>投票可否</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Aブロック</td><td>投票不可</td></tr>
+          <tr><td>Bブロック</td><td>全員の演技を観れば投票可</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>大会出場者は自分が出場したブロック以外であれば投票可能ですが、自分の組を贔屓することなく公平に判断して投票してください。加えて出場者・観客ともに、他者へ特定の組への投票の強要をすることを禁止します。また同一人物による二重投票も禁止とします。</p>
+    <p>以下、観客投票における各投票項目を説明します。</p>
+
+    <div class="rule-box">
+      <p><strong style="color:var(--deep)">《難易度》</strong></p>
+      <p>その演技や演技中に行われている技の「難しさ」を評価します。「難しさ」の定義は観客一人一人に委ねることとし、その評価に正解/不正解は無いものとします。</p>
+      <div class="quote-box">
+        <p class="q-label">参考：一般的なジャグリング大会の審査基準における「難易度」の定義の一例</p>
+        <p>技一つ一つの難易度の他、使用する物体やその数、技のスピードや手数、コンビネーション、バリエーションの多さなどが評価の対象となる。ミスの数については難易度の評価に含まれないが、技が失敗すれば当然その技の難易度に対する評価は乏しいものとなる。</p>
+        <p>一方、ミスからのスムーズなリカバリーも難易度の評価の対象に含まれる。また、ジャグリング以外の技術、例えば楽器の演奏やアクロバティックスなどのテクニックはそれ単独では難易度の評価の対象にはならない。ただしそれがジャグリングと組み合わされ、それによってジャグリングの難易度が上がるときは評価の対象となる場合がある。</p>
+      </div>
+    </div>
+
+    <div class="rule-box">
+      <p><strong style="color:var(--deep)">《演技構成》</strong></p>
+      <p>技の魅せ方や音楽との調和等、その演技全体のクオリティの高さを総合的に評価します。その評価基準は観客一人一人に委ねることとし、その評価に正解/不正解は無いものとします。</p>
+      <div class="quote-box">
+        <p class="q-label">参考：一般的なジャグリング大会の審査基準における「演技構成」の定義の一例</p>
+        <p>演技の流れ、ステージの演出、音楽との調和、衣装やキャラクター、使う道具やセット、演技全体の芸術性などにより総合的に評価される。ジャグリングに関係のない技術も、それが全体的な演出をひきたてるものであれば、評価の対象となる。</p>
+        <p>ミスの数については演技構成の評価に含まれないが、ミスによって演技の流れや見栄えが悪くなれば、演技構成に対する評価は乏しいものとなる。</p>
+      </div>
+    </div>
+
+    <div class="rule-box">
+      <p><strong style="color:var(--deep)">《好み》</strong></p>
+      <p>その人のジャグリングに対して感じた「良さ」を評価します。「難易度」「演技構成」はもちろんのこと、上記2項目では評価しきれない項目についても評価の対象となります。</p>
+      <p>「良さ」の定義は観客一人一人に委ねることとし、その評価に正解/不正解は無いものとします。ただし、演技の内容と関係のない、例えば演者個人やチームに対する個人的な感情等は評価に含めてはなりません。</p>
+    </div>
+
+    <p class="sub-head">1-4. 演技時間</p>
+    <div class="rule-box">
+      <p>最短演技時間の制限はありません。最長演技時間は「<strong style="color:var(--deep)">5分</strong>」とします。</p>
+    </div>
+
+    <p class="sub-head">1-5. 使用楽曲</p>
+    <p>使用する音源は1トラックにまとめてください。運営では、演技開始時の再生と演技終了時の停止以外の操作はできません。選手と道具の動作・回転は静止した状態から演技を開始してください。選手の静止を確認次第、演技開始のコールによって楽曲が再生されます。</p>
+    <p>音源についてはGoogleフォームを用いて回収します。音源のファイル形式は「<strong>mp3</strong>」とし、出場者には演技順決定後にフォームURLをメールにて送付します。</p>
+
+    <p class="sub-head">1-6. 照明</p>
+    <p>照明は「普通」「暗め」の2種類です。当日、既定時間内に各照明を確認でき、点呼時にスタッフが変更有無の確認を取ります。演技中の照明操作は不可、暗転も不可とします。</p>
+    <p class="note-text">※「暗め」は前明かりを「普通」より落とした設定です。</p>
+
+    <p class="sub-head">1-7. 勝敗および表彰</p>
+    <p>勝敗は、観客投票により集計した全ブロックの総合得票点数の多い組を勝利とします。総合得票点数が同点だった場合、「難易度」と「演技構成」の総合得票点数が多い組を勝利とします。加えて、今大会では個人賞として「MVP」を設けます。なお、チームで出場した場合も個人賞として扱います。</p>
+    <div class="rule-box">
+      <p><strong style="color:var(--deep)">〇 MVP</strong></p>
+      <p>エントリー枠に関係なく、紅組・白組それぞれ1組ずつ「最も優れた演技」をした選手またはチームを選出します。</p>
+    </div>
+
+    <div class="page-next">
+      <a href="entry.html" class="cta-btn">大会エントリーはコチラ →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="container">
+    <p class="footer-logo">第5回<span class="ko-red">紅</span><span class="ko-gold">白</span>ジャグリング大会</p>
+    <div class="footer-links">
+      <a href="rule.html">競技概要</a>
+      <a href="entry.html">出場エントリー</a>
+      <a href="performer.html">出場者一覧</a>
+      <a href="timetable.html">スケジュール</a>
+      <a href="goods.html">物販・出店</a>
+      <a href="sponsor.html">ご協賛・カンパ</a>
+      <a href="access.html">アクセス</a>
+      <a href="about.html">運営</a>
+      <a href="contact.html">お問い合わせ</a>
+    </div>
+    <p class="copyright">© 愛知ジャグリング協会</p>
+  </div>
+</footer>
+
+<script>
+/* ── ハンバーガー / ドロワー ── */
+const btn    = document.getElementById('hamburger');
+const drawer = document.getElementById('drawer');
+function toggleDrawer(forceClose){
+  const open = forceClose ? false : !drawer.classList.contains('open');
+  drawer.classList.toggle('open', open);
+  btn.classList.toggle('open', open);
+  btn.setAttribute('aria-expanded', open);
+  drawer.setAttribute('aria-hidden', !open);
+}
+btn.addEventListener('click', e => { e.stopPropagation(); toggleDrawer(); });
+drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleDrawer(true)));
+document.addEventListener('click', e => {
+  if (drawer.classList.contains('open') && !drawer.contains(e.target) && !btn.contains(e.target)) toggleDrawer(true);
+});
+/* ── モバイル：ドロワー内アコーディオン開閉 ── */
+document.querySelectorAll('[data-acc]').forEach(p => {
+  p.addEventListener('click', () => {
+    const panel = p.nextElementSibling;
+    const isOpen = p.classList.contains('open');
+    document.querySelectorAll('.acc-parent').forEach(o => {
+      o.classList.remove('open');
+      if (o.nextElementSibling) o.nextElementSibling.style.maxHeight = null;
+    });
+    if (!isOpen) { p.classList.add('open'); panel.style.maxHeight = panel.scrollHeight + 'px'; }
+  });
+});
+/* ── スクロールフェードイン ── */
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.06 });
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>スケジュール | 第5回紅白ジャグリング大会</title>
+<meta name="description" content="第5回紅白ジャグリング大会のスケジュール。1日目（12月12日）・2日目（12月13日）の当日進行をご案内します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Yuji+Syuku&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;1,300;1,500&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/aja-logo.PNG" type="image/png">
+<link rel="stylesheet" href="assets/style.css?v=20260728">
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="header-logo">
+      <!-- ▼ ロゴ完成後：assets/logo.svg を配置すれば表示。無ければ自動で非表示 ▼ -->
+      <img class="header-logo-img" src="assets/logo.svg" alt="第5回紅白ジャグリング大会 ロゴ" onerror="this.remove()">
+      <span class="header-logo-text">第5回<span class="ko-red">紅</span><span class="ko-gold">白</span>ジャグリング大会</span>
+    </a>
+    <nav class="nav">
+      <div class="nav-item">
+        <button class="nav-parent">MENU<span class="caret"></span></button>
+        <div class="dropdown">
+          <a href="about.html">運営</a>
+          <a href="contact.html">お問い合わせ</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-parent">出場する<span class="caret"></span></button>
+        <div class="dropdown">
+          <a href="rule.html">競技概要</a>
+          <a href="entry.html">出場エントリー</a>
+          <a href="performer.html">出場者一覧</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-parent">観覧する<span class="caret"></span></button>
+        <div class="dropdown">
+          <a href="performer.html">出場者一覧</a>
+          <a href="timetable.html" class="current">スケジュール</a>
+          <a href="access.html">アクセス</a>
+          <a href="goods.html">物販・出店</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-parent">応援する<span class="caret"></span></button>
+        <div class="dropdown">
+          <a href="sponsor.html">ご協賛・カンパ</a>
+          <a href="goods.html">物販・出店</a>
+        </div>
+      </div>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ========== MOBILE DRAWER（アコーディオン） ========== -->
+<nav class="nav-drawer" id="drawer" aria-hidden="true">
+  <button class="acc-parent" data-acc>MENU<span class="caret"></span></button>
+  <div class="acc-panel">
+    <a href="about.html">運営</a>
+    <a href="contact.html">お問い合わせ</a>
+  </div>
+  <button class="acc-parent" data-acc>出場する<span class="caret"></span></button>
+  <div class="acc-panel">
+    <a href="rule.html">競技概要</a>
+    <a href="entry.html">出場エントリー</a>
+    <a href="performer.html">出場者一覧</a>
+  </div>
+  <button class="acc-parent" data-acc>観覧する<span class="caret"></span></button>
+  <div class="acc-panel">
+    <a href="performer.html">出場者一覧</a>
+    <a href="timetable.html" class="current">スケジュール</a>
+    <a href="access.html">アクセス</a>
+    <a href="goods.html">物販・出店</a>
+  </div>
+  <button class="acc-parent" data-acc>応援する<span class="caret"></span></button>
+  <div class="acc-panel">
+    <a href="sponsor.html">ご協賛・カンパ</a>
+    <a href="goods.html">物販・出店</a>
+  </div>
+</nav>
+
+<!-- ========== PAGE HERO ========== -->
+<section class="page-hero page-hero--center">
+  <div class="page-hero-inner">
+    <h1 class="page-hero-title page-hero-title--plain">スケジュール</h1>
+  </div>
+</section>
+
+<!-- ========== BREADCRUMB ========== -->
+<nav class="breadcrumb" aria-label="パンくずリスト">
+  <a href="index.html">HOME</a>
+  <span class="sep">›</span>
+  <span class="current">スケジュール</span>
+</nav>
+
+<!-- ========== スケジュール ========== -->
+<section class="section-block" style="padding-top:32px">
+  <div class="container fade-in">
+    <div class="sec-head">
+      <div class="ja">スケジュール</div>
+    </div>
+    <p>当日のスケジュールをご案内します。本大会は2日間開催のため、日程ごとに掲載します。進行状況により、時間が前後する場合がございます。</p>
+
+    <!-- ▼ 準備中表示：スケジュールが決まったらこのブロックを削除 ▼ -->
+    <div class="rule-box" style="text-align:center">
+      <p style="margin-bottom:100px;margin-top:100px">スケジュールは決まり次第、本ページにてお知らせします。</p>
+    </div>
+
+    <!-- ================================================================
+      ▼ スケジュール画像：決まったらコメントを外し、画像を配置 ▼
+      ・1日目 → assets/timetable-day1.png
+      ・2日目 → assets/timetable-day2.png
+      ・A4縦の画像を想定（page-image--a4 で最大幅を抑えて中央寄せ）
+    ================================================================= -->
+    <!--
+    <div class="day-head">
+      <span class="day-badge">DAY 1</span>
+      <span class="day-date">12月12日（土）</span>
+    </div>
+    <div class="page-image page-image--a4">
+      <img src="assets/timetable-day1.png" alt="第5回紅白ジャグリング大会 1日目のスケジュール">
+    </div>
+
+    <div class="day-head">
+      <span class="day-badge white">DAY 2</span>
+      <span class="day-date">12月13日（日）</span>
+    </div>
+    <div class="page-image page-image--a4">
+      <img src="assets/timetable-day2.png" alt="第5回紅白ジャグリング大会 2日目のスケジュール">
+    </div>
+
+    <p class="page-image-note">※ 進行状況により、時間が前後する場合がございます。最新の情報は公式Xにてお知らせします。</p>
+    -->
+
+    <!--<a href="index.html" class="home-link">← HOME に戻る</a>-->
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="container">
+    <p class="footer-logo">第5回<span class="ko-red">紅</span><span class="ko-gold">白</span>ジャグリング大会</p>
+    <div class="footer-links">
+      <a href="rule.html">競技概要</a>
+      <a href="entry.html">出場エントリー</a>
+      <a href="performer.html">出場者一覧</a>
+      <a href="timetable.html">スケジュール</a>
+      <a href="goods.html">物販・出店</a>
+      <a href="sponsor.html">ご協賛・カンパ</a>
+      <a href="access.html">アクセス</a>
+      <a href="about.html">運営</a>
+      <a href="contact.html">お問い合わせ</a>
+    </div>
+    <p class="copyright">© 愛知ジャグリング協会</p>
+  </div>
+</footer>
+
+<script>
+/* ── ハンバーガー / ドロワー ── */
+const btn    = document.getElementById('hamburger');
+const drawer = document.getElementById('drawer');
+function toggleDrawer(forceClose){
+  const open = forceClose ? false : !drawer.classList.contains('open');
+  drawer.classList.toggle('open', open);
+  btn.classList.toggle('open', open);
+  btn.setAttribute('aria-expanded', open);
+  drawer.setAttribute('aria-hidden', !open);
+}
+btn.addEventListener('click', e => { e.stopPropagation(); toggleDrawer(); });
+drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleDrawer(true)));
+document.addEventListener('click', e => {
+  if (drawer.classList.contains('open') && !drawer.contains(e.target) && !btn.contains(e.target)) toggleDrawer(true);
+});
+/* ── モバイル：ドロワー内アコーディオン開閉 ── */
+document.querySelectorAll('[data-acc]').forEach(p => {
+  p.addEventListener('click', () => {
+    const panel = p.nextElementSibling;
+    const isOpen = p.classList.contains('open');
+    document.querySelectorAll('.acc-parent').forEach(o => {
+      o.classList.remove('open');
+      if (o.nextElementSibling) o.nextElementSibling.style.maxHeight = null;
+    });
+    if (!isOpen) { p.classList.add('open'); panel.style.maxHeight = panel.scrollHeight + 'px'; }
+  });
+});
+/* ── スクロールフェードイン ── */
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.06 });
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

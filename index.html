@@ -3,12 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>第5回 紅白ジャグリング大会</title>
-<meta name="description" content="第5回 紅白ジャグリング大会｜2026年12月、愛知県名古屋市 名東文化小劇場 ホールにて開催予定。紅組・白組に分かれて技と表現を競う、年末恒例のジャグリングの祭典。出場・観覧の情報はこちら。">
+<title>第5回紅白ジャグリング大会</title>
+<meta name="description" content="第5回紅白ジャグリング大会｜2026年12月12日（土）13日（日）、愛知県名古屋市 南文化小劇場 ホールにて開催。紅組・白組に分かれてジャグリングの演技を披露し合う、毎年恒例のジャグリングの祭典。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Yuji+Syuku&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;1,300;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=20261206">
+<link rel="icon" href="assets/aja-logo.PNG" type="image/png">
+<link rel="stylesheet" href="assets/style.css?v=20260728">
 </head>
 <body>
 
@@ -17,8 +18,8 @@
   <div class="header-inner">
     <a href="index.html" class="header-logo">
       <!-- ▼ ロゴ完成後：assets/logo.svg を配置すれば表示。無ければ自動で非表示 ▼ -->
-      <img class="header-logo-img" src="assets/logo.svg" alt="第五回紅白ジャグリング大会 ロゴ" onerror="this.remove()">
-      <span class="header-logo-text">第五回<span class="ko-red">紅</span><span class="ko-gold">白</span>ジャグリング大会</span>
+      <img class="header-logo-img" src="assets/logo.svg" alt="第5回紅白ジャグリング大会 ロゴ" onerror="this.remove()">
+      <span class="header-logo-text">第5回<span class="ko-red">紅</span><span class="ko-gold">白</span>ジャグリング大会</span>
     </a>
     <nav class="nav">
       <div class="nav-item">
@@ -42,12 +43,14 @@
           <a href="performer.html">出場者一覧</a>
           <a href="timetable.html">スケジュール</a>
           <a href="access.html">アクセス</a>
+          <a href="goods.html">物販・出店</a>
         </div>
       </div>
       <div class="nav-item">
         <button class="nav-parent">応援する<span class="caret"></span></button>
         <div class="dropdown">
           <a href="sponsor.html">協賛・カンパ</a>
+          <a href="goods.html">物販・出店</a>
         </div>
       </div>
     </nav>
@@ -75,26 +78,30 @@
     <a href="performer.html">出場者一覧</a>
     <a href="timetable.html">スケジュール</a>
     <a href="access.html">アクセス</a>
+    <a href="goods.html">物販・出店</a>
   </div>
   <button class="acc-parent" data-acc>応援する<span class="caret"></span></button>
   <div class="acc-panel">
-    <a href="sponsor.html">協賛・カンパ</a>
+    <a href="sponsor.html">ご協賛・カンパ</a>
+    <a href="goods.html">物販・出店</a>
   </div>
 </nav>
 
 <!-- ========== HERO ========== -->
 <section class="hero" id="top">
   <div class="hero-inner">
-    <!-- ▼ ロゴ完成後：assets/logo.svg を配置すれば表示。無ければ自動で非表示 ▼ -->
     <div class="hero-logo">
-      <img class="hero-logo-img" src="assets/logo.svg" alt="第五回紅白ジャグリング大会 ロゴ"
+      <img class="hero-logo-img" src="assets/keyvisual.png"
+           alt="第5回紅白ジャグリング大会 キービジュアル"
+           width="2894" height="4093" fetchpriority="high"
            onerror="this.parentNode.remove()">
     </div>
-    <p class="hero-no">第 5 回</p>
-    <h1 class="hero-title"><span class="ko">紅白</span>ジャグリング大会</h1>
-    <div class="hero-bottom">
-      <p class="hero-meta"><b>2026年12月</b>（予定）<br>愛知県名古屋市 名東文化小劇場 ホール</p>
-      <a href="entry.html" class="hero-cta-btn">出場エントリー →</a>
+    <div class="hero-copy">
+      <h1 class="hero-title"><span class="hero-no">第5回</span><span><span class="ko">紅</span><span class="ko-gold">白</span></span><span>ジャグリング大会</span></h1>
+      <div class="hero-bottom">
+        <p class="hero-meta"><b>2026年12月12日 (土) - 13日 (日)</b><br>愛知県名古屋市 南文化小劇場 ホール</p>
+        <a href="entry.html" class="hero-cta-btn">出場エントリー →</a>
+      </div>
     </div>
   </div>
 </section>
@@ -103,32 +110,33 @@
 <section class="section-block" id="overview">
   <div class="container fade-in">
     <div class="sec-head">
-      <div class="ja">大会<span class="accent">概要</span></div>
+      <div class="ja"><span class="accent">大会</span>概要</div>
     </div>
     <table class="overview-table">
-      <tr><th>大会名</th><td>第五回 紅白ジャグリング大会</td></tr>
-      <tr><th>日程</th><td>2026年12月（予定）</td></tr>
+      <tr><th>大会名</th><td>第5回紅白ジャグリング大会</td></tr>
+      <tr><th>日程</th><td>2026/12/12 (土) - 13 (日)</td></tr>
       <tr>
         <th>会場</th>
-        <td>愛知県名古屋市 名東文化小劇場 ホール<br>
-          <small>名古屋市名東区上社一丁目802番地 上社ターミナルビル3階</small>
+        <td>愛知県名古屋市 南文化小劇場 ホール<br>
+          <small>名古屋市南区千竈通2丁目10番地の2</small>
         </td>
       </tr>
-      <tr><th>競技</th><td>紅組・白組の全8ブロックで演技を披露<br><small>詳細は「競技・ルール」「出場エントリー」ページをご確認ください</small></td></tr>
+      <tr><th>観覧</th><td>全席自由席・事前予約不要・入場無料<br><small>会場でカンパを募集しております。</small></td></tr>
     </table>
   </div>
 </section>
 
-<!-- ========== 紅白ジャグリングとは ========== -->
+<!-- ========== 紅白ジャグリング大会とは ========== -->
 <section class="section-block alt" id="about">
   <div class="container fade-in">
     <div class="sec-head">
-      <div class="ja">紅白ジャグリング<span class="accent">とは</span></div>
+      <div class="ja"><span class="accent">紅</span><span class="ko-gold">白</span>ジャグリング大会とは</div>
     </div>
     <div class="concept-box">
-      <p class="concept-tagline">紅組と白組、技を競う一日。</p>
-      <p>紅白ジャグリング大会は、出場者が<strong>紅組</strong>と<strong>白組</strong>の二組に分かれ、A〜Hの全8ブロックを通して技と表現を競い合う、年末恒例のジャグリングの祭典です。</p>
-      <p>勝敗だけでなく、出場者・観客・運営が一体となって盛り上がる<strong>「ハレの一日」</strong>であることを大切にしています。実力を披露する場としてはもちろん、仲間と出会い、楽しむ場でもあります。</p>
+      <p class="concept-tagline"><span class="ko-red">紅組</span>と<span class="ko-gold">白組</span>、チームで競い合うジャグリング大会</p>
+      <p>紅白ジャグリング大会は、従来のジャグリングの大会とは異なり、出場者が<strong>紅組</strong>と<gold>白組</gold>の二組に分かれます。</p>
+      <p>出場者は、チームの勝利を目指して、日頃の練習の成果を披露していただきます。</p>
+      <p>そして、勝敗を決めるのは、会場の皆様の<strong>「観客投票」</strong>です。</p>
       <p>第5回となる今回も、皆様に楽しんでいただける大会を目指して企画・運営してまいります。皆様のご出場・ご来場を心よりお待ちしております。</p>
     </div>
   </div>
@@ -138,12 +146,12 @@
 <section class="section-block" id="join">
   <div class="container fade-in">
     <div class="sec-head">
-      <div class="ja">ご出場をお考えの<span class="accent">方へ</span></div>
+      <div class="ja"><span class="accent">ご出場</span>をお考えの方へ</div>
     </div>
-    <p>紅組・白組、どちらの組にもドラマがあります。競技内容・各部門・エントリー方法は専用ページよりご確認ください。エントリー受付の開始は公式Xでもお知らせします。</p>
+    <p>大会のルールやエントリーに関する情報は専用ページよりご確認ください。</p>
     <div class="cta-row">
-      <a href="rule.html" class="cta-btn outline">競技・ルールを見る</a>
-      <a href="entry.html" class="cta-btn">出場エントリーへ</a>
+      <a href="rule.html" class="cta-btn outline">競技概要を見る</a>
+      <a href="entry.html" class="cta-btn">出場エントリー →</a>
     </div>
   </div>
 </section>
@@ -152,12 +160,12 @@
 <section class="section-block alt" id="watch">
   <div class="container fade-in">
     <div class="sec-head">
-      <div class="ja">ご観覧をお考えの<span class="accent">方へ</span></div>
+      <div class="ja"><span class="accent">ご観覧</span>をお考えの方へ</div>
     </div>
-    <p>会場では、限定グッズの物販やキッチンカーの出店も予定しています。当日の進行やアクセス情報は各ページをご覧ください。</p>
+    <p>本大会は観覧無料・事前予約不要・全席自由席となっておりますので、当日直接会場までお越しください。会場アクセスやスケジュールは専用ページをご覧ください。</p>
     <div class="cta-row">
       <a href="access.html" class="cta-btn outline">会場アクセスを見る</a>
-      <a href="goods.html" class="cta-btn outline">物販・出店を見る</a>
+      <a href="timetable.html" class="cta-btn outline">スケジュールを見る</a>
     </div>
   </div>
 </section>
@@ -165,19 +173,19 @@
 <!-- ========== FOOTER ========== -->
 <footer>
   <div class="container">
-    <p class="footer-logo">第五回<span class="ko-red">紅</span><span class="ko-gold">白</span>ジャグリング大会</p>
+    <p class="footer-logo">第5回<span class="ko-red">紅</span><span class="ko-gold">白</span>ジャグリング大会</p>
     <div class="footer-links">
-      <a href="rule.html">競技・ルール</a>
+      <a href="rule.html">競技概要</a>
       <a href="entry.html">出場エントリー</a>
-      <a href="performer.html">出場者・演技順</a>
-      <a href="timetable.html">タイムスケジュール</a>
+      <a href="performer.html">出場者一覧</a>
+      <a href="timetable.html">スケジュール</a>
       <a href="goods.html">物販・出店</a>
       <a href="sponsor.html">ご協賛・カンパ</a>
       <a href="access.html">アクセス</a>
       <a href="about.html">運営</a>
       <a href="contact.html">お問い合わせ</a>
     </div>
-    <p class="copyright">© 2026 第5回 紅白ジャグリング大会　主催：愛知ジャグリング協会 / BlueHat</p>
+    <p class="copyright">© 愛知ジャグリング協会</p>
   </div>
 </footer>
 

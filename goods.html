@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>物販・出店 | 第5回紅白ジャグリング大会</title>
+<meta name="description" content="第5回紅白ジャグリング大会の物販・出店情報。大会限定オフィシャルグッズの販売、会場での出店について。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Yuji+Syuku&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;1,300;1,500&display=swap" rel="stylesheet">
+<link rel="icon" href="assets/aja-logo.PNG" type="image/png">
+<link rel="stylesheet" href="assets/style.css?v=20260728">
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="header-logo">
+      <!-- ▼ ロゴ完成後：assets/logo.svg を配置すれば表示。無ければ自動で非表示 ▼ -->
+      <img class="header-logo-img" src="assets/logo.svg" alt="第5回紅白ジャグリング大会 ロゴ" onerror="this.remove()">
+      <span class="header-logo-text">第5回<span class="ko-red">紅</span><span class="ko-gold">白</span>ジャグリング大会</span>
+    </a>
+    <nav class="nav">
+      <div class="nav-item">
+        <button class="nav-parent">MENU<span class="caret"></span></button>
+        <div class="dropdown">
+          <a href="about.html">運営</a>
+          <a href="contact.html">お問い合わせ</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-parent">出場する<span class="caret"></span></button>
+        <div class="dropdown">
+          <a href="rule.html">競技概要</a>
+          <a href="entry.html">出場エントリー</a>
+          <a href="performer.html">出場者一覧</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-parent">観覧する<span class="caret"></span></button>
+        <div class="dropdown">
+          <a href="performer.html">出場者一覧</a>
+          <a href="timetable.html">スケジュール</a>
+          <a href="access.html">アクセス</a>
+          <a href="goods.html">物販・出店</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <button class="nav-parent">応援する<span class="caret"></span></button>
+        <div class="dropdown">
+          <a href="sponsor.html">ご協賛・カンパ</a>
+          <a href="goods.html">物販・出店</a>
+        </div>
+      </div>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ========== MOBILE DRAWER（アコーディオン） ========== -->
+<nav class="nav-drawer" id="drawer" aria-hidden="true">
+  <button class="acc-parent" data-acc>MENU<span class="caret"></span></button>
+  <div class="acc-panel">
+    <a href="about.html">運営</a>
+    <a href="contact.html">お問い合わせ</a>
+  </div>
+  <button class="acc-parent" data-acc>出場する<span class="caret"></span></button>
+  <div class="acc-panel">
+    <a href="rule.html">競技概要</a>
+    <a href="entry.html">出場エントリー</a>
+    <a href="performer.html">出場者一覧</a>
+  </div>
+  <button class="acc-parent" data-acc>観覧する<span class="caret"></span></button>
+  <div class="acc-panel">
+    <a href="performer.html">出場者一覧</a>
+    <a href="timetable.html">スケジュール</a>
+    <a href="access.html">アクセス</a>
+    <a href="goods.html">物販・出店</a>
+  </div>
+  <button class="acc-parent" data-acc>応援する<span class="caret"></span></button>
+  <div class="acc-panel">
+    <a href="sponsor.html">ご協賛・カンパ</a>
+    <a href="goods.html">物販・出店</a>
+  </div>
+</nav>
+
+<!-- ========== PAGE HERO ========== -->
+<section class="page-hero page-hero--center">
+  <div class="page-hero-inner">
+    <h1 class="page-hero-title page-hero-title--plain">物販・出店</h1>
+  </div>
+</section>
+
+<!-- ========== BREADCRUMB ========== -->
+<nav class="breadcrumb" aria-label="パンくずリスト">
+  <a href="index.html">HOME</a>
+  <span class="sep">›</span>
+  <span class="current">物販・出店</span>
+</nav>
+
+<!-- ========== オフィシャルグッズ ========== -->
+<section class="section-block" style="padding-top:32px">
+  <div class="container fade-in">
+    <div class="sec-head">
+      <div class="ja">オフィシャルグッズ</div>
+    </div>
+    <p>大会限定のオフィシャルグッズを、会場にて販売します。</p>
+
+    <!-- ================================================================
+      ▼ 準備中表示：商品が決まったらこのブロックを削除 ▼
+    ================================================================= -->
+    <div class="rule-box" style="text-align:center">
+      <p style="margin-bottom:0">商品ラインナップは決まり次第、本ページにてお知らせします。</p>
+    </div>
+
+    <!-- ================================================================
+      ▼ 商品カード：商品が決まったらコメントを外し、内容を書き換え ▼
+      ・画像は assets/goods/ フォルダに配置（正方形推奨）
+      ・goods-card をコピーして商品数分並べる
+      ・「会場限定」「事前予約可」などのバッジは goods-badge（不要なら行ごと削除）
+      ・価格が未定の場合は goods-price の行を削除してもレイアウトは崩れません
+    ================================================================= -->
+    <!--
+    <div class="goods-grid">
+      <div class="goods-card">
+        <img class="goods-img" src="assets/goods/rubberband.jpg" alt="ラバーバンド（紅・白）">
+        <div class="goods-body">
+          <span class="goods-badge">会場限定</span>
+          <p class="goods-name">ラバーバンド（紅・白）</p>
+          <p class="goods-price">¥800 <small>／ セット ¥1,500</small></p>
+          <p class="goods-desc">紅白2色のラバーバンド。セット購入で¥100お得です。</p>
+        </div>
+      </div>
+      <div class="goods-card">
+        <img class="goods-img" src="assets/goods/masu.jpg" alt="紅白枡（三勺）">
+        <div class="goods-body">
+          <span class="goods-badge">会場限定</span>
+          <p class="goods-name">紅白枡（三勺）</p>
+          <p class="goods-price">¥800</p>
+          <p class="goods-desc">大会ロゴ入りの木製枡です。</p>
+        </div>
+      </div>
+    </div>
+    -->
+
+    <!-- ================================================================
+      ▼ 販売方法：詳細が決まったらコメントを外し、内容を書き換え ▼
+    ================================================================= -->
+    <!--
+    <p class="sub-head">販売方法</p>
+    <div class="rule-box">
+      <p><strong style="color:var(--deep)">〇 会場販売</strong></p>
+      <p>会場ロビーの物販ブースにて販売します。</p>
+      <p style="margin-bottom:0" class="note-text">※ 商品は数に限りがございます。売り切れの際はご容赦ください。</p>
+    </div>
+    -->
+
+    <!-- ================================================================
+      ▼ STORES事前予約：実施する場合のみコメントを外し、URLを設定 ▼
+    ================================================================= -->
+    <!--
+    <div class="rule-box">
+      <p><strong style="color:var(--deep)">〇 事前予約（STORES）</strong></p>
+      <p>一部商品は、STORESにて事前予約を受け付けます。ご予約いただいた商品は、当日会場の物販ブースにてお渡しします。</p>
+      <p class="note-text">予約期間：20XX年XX月XX日（X）〜 XX月XX日（X）23:59</p>
+      <div style="margin-top:16px;display:flex;justify-content:center">
+        <a href="https://bluehat1103.stores.jp/" target="_blank" rel="noopener" class="cta-btn" style="width:100%;max-width:320px">
+          事前予約はこちら
+          <span class="cta-btn-sub">外部リンク（STORES）が開きます</span>
+        </a>
+      </div>
+    </div>
+    -->
+  </div>
+</section>
+
+<!-- ========== 出店 ========== -->
+<section class="section-block alt">
+  <div class="container fade-in">
+    <div class="sec-head">
+      <div class="ja">出店</div>
+    </div>
+
+    <!-- ▼ 準備中表示：出店者が決まったらこのブロックを削除 ▼ -->
+    <div class="rule-box" style="text-align:center">
+      <p style="margin-bottom:0">出店情報は決まり次第、本ページにてお知らせします。</p>
+    </div>
+
+    <!-- ================================================================
+      ▼ 出店者カード：決まったらコメントを外し、内容を書き換え ▼
+      ・ロゴ/写真は assets/goods/ フォルダに配置
+      ・sponsor-item ブロックをコピーして出店者数分並べる
+    ================================================================= -->
+    <!--
+    <div class="sponsor-list">
+      <div class="sponsor-item">
+        <div class="sponsor-logo-wrap">
+          <img src="assets/goods/shop-logo.png" alt="○○店" class="sponsor-logo">
+        </div>
+        <div class="sponsor-info">
+          <p class="sponsor-name">○○店 様</p>
+          <p class="sponsor-desc">▼メッセージ▼<br>『出店者様からのメッセージをここに記載します。』</p>
+        </div>
+      </div>
+    </div>
+    -->
+
+    <!--<a href="index.html" class="home-link">← HOME に戻る</a>-->
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="container">
+    <p class="footer-logo">第5回<span class="ko-red">紅</span><span class="ko-gold">白</span>ジャグリング大会</p>
+    <div class="footer-links">
+      <a href="rule.html">競技概要</a>
+      <a href="entry.html">出場エントリー</a>
+      <a href="performer.html">出場者一覧</a>
+      <a href="timetable.html">タイムスケジュール</a>
+      <a href="goods.html">物販・出店</a>
+      <a href="sponsor.html">ご協賛・カンパ</a>
+      <a href="access.html">アクセス</a>
+      <a href="about.html">運営</a>
+      <a href="contact.html">お問い合わせ</a>
+    </div>
+    <p class="copyright">© 愛知ジャグリング協会</p>
+  </div>
+</footer>
+
+<script>
+/* ── ハンバーガー / ドロワー ── */
+const btn    = document.getElementById('hamburger');
+const drawer = document.getElementById('drawer');
+function toggleDrawer(forceClose){
+  const open = forceClose ? false : !drawer.classList.contains('open');
+  drawer.classList.toggle('open', open);
+  btn.classList.toggle('open', open);
+  btn.setAttribute('aria-expanded', open);
+  drawer.setAttribute('aria-hidden', !open);
+}
+btn.addEventListener('click', e => { e.stopPropagation(); toggleDrawer(); });
+drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleDrawer(true)));
+document.addEventListener('click', e => {
+  if (drawer.classList.contains('open') && !drawer.contains(e.target) && !btn.contains(e.target)) toggleDrawer(true);
+});
+/* ── モバイル：ドロワー内アコーディオン開閉 ── */
+document.querySelectorAll('[data-acc]').forEach(p => {
+  p.addEventListener('click', () => {
+    const panel = p.nextElementSibling;
+    const isOpen = p.classList.contains('open');
+    document.querySelectorAll('.acc-parent').forEach(o => {
+      o.classList.remove('open');
+      if (o.nextElementSibling) o.nextElementSibling.style.maxHeight = null;
+    });
+    if (!isOpen) { p.classList.add('open'); panel.style.maxHeight = panel.scrollHeight + 'px'; }
+  });
+});
+/* ── スクロールフェードイン ── */
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.06 });
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

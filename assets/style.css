@@ -12,7 +12,7 @@
   --off:    #faf7f3;   /* オフホワイト（背景） */
   --white:  #ffffff;
   --ink:    #1c1c1e;   /* 本文 */
-  --sub:    #7a7a7e;   /* 補助テキスト */
+  --sub:    #6a5f5a;   /* 補助テキスト */
   --line:   #e6ded3;   /* 罫線 */
   --line2:  #efe9e0;
   --hh: 56px;
@@ -92,16 +92,16 @@ header{
   color:var(--ink);font-family:inherit;font-size:13px;letter-spacing:.06em;font-weight:600;
   background:none;border:none;cursor:pointer;transition:color .2s,background .2s;
 }
-.nav-parent:hover,.nav-item:hover .nav-parent{color:var(--deep);background:rgba(177,18,38,.05);}
+.nav-parent:hover,.nav-item:hover .nav-parent,.nav-item:focus-within .nav-parent{color:var(--deep);background:rgba(177,18,38,.05);}
 .nav-parent .caret{width:7px;height:7px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);margin-top:-3px;transition:transform .2s;opacity:.7;}
-.nav-item:hover .nav-parent .caret{transform:rotate(225deg);margin-top:2px;}
+.nav-item:hover .nav-parent .caret,.nav-item:focus-within .nav-parent .caret{transform:rotate(225deg);margin-top:2px;}
 .dropdown{
   position:absolute;top:var(--hh);left:50%;transform:translateX(-50%) translateY(8px);
   min-width:210px;background:var(--white);border:1px solid var(--line);border-radius:12px;
   box-shadow:0 18px 44px rgba(0,0,0,.14);padding:8px;
   opacity:0;visibility:hidden;transition:opacity .2s,transform .2s;
 }
-.nav-item:hover .dropdown{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);}
+.nav-item:hover .dropdown,.nav-item:focus-within .dropdown{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);}
 .dropdown::before{content:'';position:absolute;top:-14px;left:0;right:0;height:14px;}
 .dropdown a{
   display:block;padding:12px 14px;border-radius:8px;
@@ -125,7 +125,7 @@ header{
   backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
   border-bottom:1px solid var(--line);z-index:290;
   transform:translateY(-120%);transition:transform .35s cubic-bezier(.4,0,.2,1);
-  padding:6px 0 22px;max-height:calc(100vh - var(--hh));overflow-y:auto;
+  padding:6px 0 0;max-height:calc(100vh - var(--hh));overflow-y:auto;
 }
 .nav-drawer.open{transform:translateY(0);}
 .acc-parent{
@@ -142,32 +142,43 @@ header{
 .acc-panel a:active{background:rgba(177,18,38,.08);}
 
 /* ==========================================================================
-   HERO
+   HERO（キービジュアル＋情報バー）
 ========================================================================== */
 .hero{
-  position:relative;padding:9vh 20px 8vh;overflow:hidden;
+  position:relative;
+  padding:clamp(24px,4vh,44px) 20px clamp(32px,5vh,56px);
+  overflow:hidden;
   border-bottom:1px solid var(--line);
 }
 .hero::before{  /* 上端の深紅ライン */
   content:'';position:absolute;top:0;left:0;right:0;height:8px;background:var(--deep);
 }
 .hero-inner{position:relative;z-index:2;max-width:960px;margin:0 auto;}
-/* ヒーローのロゴ画像スロット（画像が無ければJSで非表示） */
-.hero-logo{margin-bottom:26px;}
-.hero-logo-img{height:clamp(88px,20vw,150px);width:auto;display:block;}
-.hero-no{
-  font-size:clamp(14px,2vw,20px);font-weight:600;letter-spacing:.3em;color:var(--sub);margin-bottom:14px;
+
+/* ---------- キービジュアル（2894×4093） ---------- */
+.hero-logo{margin-bottom:clamp(22px,3vw,34px);}
+.hero-logo-img{
+  width:100%;height:auto;
 }
+
+/* ---------- 情報バー：タイトル＋日程＋エントリー ---------- */
+.hero-copy{padding-top:clamp(18px,2.4vw,24px);}
 .hero-title{
+  --title-size:clamp(23px,3.6vw,34px);
   font-family:'Shippori Mincho',serif;font-weight:800;
-  font-size:clamp(38px,8vw,104px);line-height:1.08;letter-spacing:.02em;
+  font-size:var(--title-size);line-height:1.45;letter-spacing:.01em;
+  font-feature-settings:"palt" 1;
+  display:block;
 }
+.hero-title > span{display:inline;line-height:inherit;}
 .hero-title .ko{color:var(--deep);}
+
 .hero-bottom{
-  margin-top:40px;display:flex;align-items:flex-end;justify-content:space-between;
-  gap:24px;flex-wrap:wrap;
+  margin-top:14px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:16px 28px;flex-wrap:wrap;
 }
-.hero-meta{font-size:clamp(14px,1.6vw,17px);line-height:1.95;font-weight:500;}
+.hero-meta{font-size:clamp(14px,1.6vw,17px);line-height:1.9;font-weight:500;}
 .hero-meta b{color:var(--deep);}
 .hero-cta-btn{
   display:inline-block;background:var(--deep);color:var(--white);
@@ -176,6 +187,27 @@ header{
   transition:background .2s;
 }
 .hero-cta-btn:hover{background:var(--deep2);color:var(--white);text-decoration:none;}
+
+/* ---------- PC：キービジュアル＋タイトルの2カラム（≥820px／ナビ切替と同じ） ---------- */
+@media (min-width:820px){
+  .hero{padding:clamp(40px,6vh,64px) 20px clamp(44px,6vh,68px);}
+  .hero-inner{display:flex;align-items:center;gap:clamp(32px,4vw,52px);}
+
+  .hero-logo{flex:0 0 clamp(280px,33vw,360px);margin-bottom:0;}
+
+  .hero-copy{flex:1 1 auto;min-width:0;padding-top:0;}
+
+  .hero-title{
+    --title-size:clamp(40px,5.2vw,58px);
+    display:flex;flex-direction:column;align-items:flex-start;
+    row-gap:clamp(10px,1.6vw,22px);
+    line-height:1;letter-spacing:.02em;
+  }
+  .hero-title > span{display:block;line-height:1;}
+  .hero-no{font-size:calc(var(--title-size) * .9);letter-spacing:.03em;}
+
+  .hero-bottom{margin-top:36px;align-items:flex-end;}
+}
 
 /* ==========================================================================
    大会概要テーブル
@@ -197,11 +229,12 @@ header{
 .concept-box{border:1px solid var(--line);border-left:4px solid var(--deep);background:var(--white);padding:30px 24px;margin-top:8px;}
 .concept-tagline{
   font-family:'Yuji Syuku',serif;font-weight:400;
-  font-size:clamp(22px,5vw,32px);color:var(--deep);margin-bottom:20px;line-height:1.4;letter-spacing:.04em;
+  font-size:clamp(22px,5vw,32px);color:var(--ink);margin-bottom:20px;line-height:1.4;letter-spacing:.04em;
 }
 .concept-box p{line-height:2;}
 .concept-box p:last-child{margin-bottom:0;}
 .concept-box strong{color:var(--deep);font-weight:700;}
+.concept-box gold{color:var(--gold);font-weight:700;}
 
 /* ==========================================================================
    CTA（出場者向け／観覧者向け）
@@ -244,8 +277,8 @@ footer::before{content:'';position:absolute;top:-1px;left:0;right:0;height:4px;b
 /* ---------- スマホ（≤479px）：詰まりやすい箇所を微調整 ---------- */
 @media (max-width:479px){
   body{font-size:14px;}
-  .hero{padding:7vh 18px 6vh;}
-  .hero-bottom{flex-direction:column;align-items:stretch;gap:20px;}
+.hero{padding:20px 18px 34px;}                                    /* 旧：7vh 18px 6vh */
+.hero-bottom{flex-direction:column;align-items:stretch;gap:16px;} /* 旧：gap:20px */
   .hero-cta-btn{text-align:center;}
   .cta-btn{max-width:none;}
   .footer-links{gap:2px 10px;}
@@ -273,3 +306,203 @@ footer::before{content:'';position:absolute;top:-1px;left:0;right:0;height:4px;b
 }
 
 @media (min-width:960px){.container{padding:0 40px;}}
+/* ==========================================================================
+   サブページ共通
+========================================================================== */
+/* ---------- ページヒーロー ---------- */
+.page-hero{
+  position:relative;padding:40px 20px 48px;border-bottom:1px solid var(--line);
+  background:var(--white);
+}
+.page-hero::before{content:'';position:absolute;left:0;right:0;bottom:0;height:8px;background:var(--deep);}
+.page-hero-inner{max-width:960px;margin:0 auto;}
+.page-hero-title{
+  font-family:'Yuji Syuku',serif;font-weight:400;
+  font-size:clamp(30px,6vw,46px);letter-spacing:.08em;line-height:1.25;
+  position:relative;display:inline-block;padding-bottom:12px;
+}
+.page-hero-title::after{content:'';position:absolute;left:0;bottom:0;width:56px;height:4px;background:var(--deep);}
+.page-hero-brand{margin-top:10px;font-size:13px;color:var(--sub);letter-spacing:.08em;font-feature-settings:"palt" 1;}
+/* ページヒーロー：中央ぞろえ・プレーン（下線なし） */
+.page-hero--center{text-align:center;}
+.page-hero-title--plain{padding-bottom:0;}
+.page-hero-title--plain::after{display:none;}
+
+/* ---------- パンくず ---------- */
+.breadcrumb{
+  max-width:960px;margin:0 auto;padding:14px 20px 0;
+  font-size:12px;color:var(--sub);display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+}
+.breadcrumb a{color:var(--sub);}
+.breadcrumb a:hover{color:var(--deep);text-decoration:none;}
+.breadcrumb .sep{opacity:.6;}
+.breadcrumb .current{color:var(--deep);font-weight:600;}
+
+/* ---------- PDFダウンロードボタン ---------- */
+.pdf-box{
+  border:1px solid var(--line);border-left:4px solid var(--deep);background:var(--white);
+  padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+.pdf-box p{margin:0;font-size:14px;color:var(--ink);}
+.pdf-box p small{display:block;color:var(--sub);font-size:12px;margin-top:2px;}
+.pdf-btn{
+  display:inline-flex;align-items:center;gap:10px;white-space:nowrap;
+  background:var(--deep);color:var(--white);font-family:'Shippori Mincho',serif;font-weight:700;
+  font-size:14px;letter-spacing:.06em;padding:12px 26px;border-radius:100px;transition:background .2s;
+}
+.pdf-btn:hover{background:var(--deep2);color:var(--white);text-decoration:none;}
+.pdf-btn svg{width:18px;height:18px;flex-shrink:0;}
+
+/* ---------- 記事系：小見出し・本文パーツ ---------- */
+.sub-head{
+  font-family:'Shippori Mincho',serif;font-size:clamp(17px,2.4vw,20px);font-weight:700;
+  margin:34px 0 14px;padding-left:14px;border-left:4px solid var(--deep);line-height:1.5;
+}
+.sub-head:first-of-type{margin-top:0;}
+.rule-box{
+  border:1px solid var(--line);background:var(--white);border-radius:10px;
+  padding:20px 22px;margin:14px 0;
+}
+.rule-box p:last-child{margin-bottom:0;}
+.note-text{font-size:13px;color:var(--sub);}
+.quote-box{
+  background:rgba(177,18,38,.03);border:1px dashed var(--line);border-radius:10px;
+  padding:18px 20px;margin:12px 0;font-size:13.5px;color:#555;line-height:1.9;
+}
+.quote-box .q-label{font-size:12px;color:var(--deep);font-weight:700;letter-spacing:.1em;margin-bottom:6px;}
+.quote-box p:last-child{margin-bottom:0;}
+
+/* ---------- 表（競技概要） ---------- */
+.rule-table-wrap{overflow-x:auto;margin:14px 0;}
+.rule-table{
+  width:100%;border-collapse:collapse;border:1px solid var(--line);background:var(--white);
+  font-size:14px;min-width:340px;
+}
+.rule-table caption{
+  caption-side:top;text-align:center;font-size:13px;color:var(--sub);padding-bottom:8px;letter-spacing:.04em;
+}
+.rule-table th,.rule-table td{border:1px solid var(--line);padding:10px 12px;text-align:center;line-height:1.6;}
+.rule-table thead th{background:rgba(177,18,38,.04);font-weight:700;}
+.rule-table .th-red{background:rgba(177,18,38,.12);color:var(--deep2);font-weight:700;}
+.rule-table .th-white{background:#f3f0ea;color:var(--ink);font-weight:700;}
+.rule-table td.left,.rule-table th.left{text-align:left;}
+.rule-table .mark{color:var(--deep);font-weight:700;}
+.table-3col{
+  table-layout:fixed;
+}
+.table-3col th:first-child,
+.table-3col td:first-child{
+  width:50%;
+}
+/* 残りの2列(紅組・白組)は自動的に25%ずつで均等になります */
+
+/* ---------- 料金 ---------- */
+.fee-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0;}
+.fee-item{
+  background:var(--white);border:1px solid var(--line);border-radius:10px;
+  padding:20px;text-align:center;
+}
+.fee-item .fee-div{display:block;font-size:14px;font-weight:600;color:var(--sub);margin-bottom:6px;}
+.fee-item .fee-price{font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--deep);line-height:1.2;}
+.fee-item .fee-price small{font-size:14px;font-family:'Shippori Mincho',serif;color:var(--ink);}
+@media (max-width:479px){ .fee-grid{grid-template-columns:1fr;} }
+
+/* ---------- ページ下部：関連導線 ---------- */
+.page-next{
+  margin-top:28px;padding-top:26px;
+  display:flex;justify-content:center;
+}
+
+
+/* ---------- ナビ：現在ページ表示 ---------- */
+.dropdown a.current{color:var(--deep);background:rgba(177,18,38,.05);}
+.acc-panel a.current{color:var(--deep);font-weight:700;}
+/* ==========================================================================
+   協賛ページ（sponsor.html）
+========================================================================== */
+/* ---------- プラン画像 ---------- */
+.sponsor-plan-image{margin:20px 0;}
+.sponsor-plan-image img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:var(--white);}
+
+/* ---------- 申込ボタン ---------- */
+.sponsor-cta-buttons{display:flex;flex-direction:column;align-items:stretch;gap:12px;max-width:340px;margin:32px auto;}
+.sponsor-cta-buttons .cta-btn{width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+.cta-btn-sub{display:block;font-size:11px;font-weight:400;letter-spacing:.04em;opacity:.85;margin-top:3px;}
+@media (min-width:768px){
+  .sponsor-cta-buttons{flex-direction:row;justify-content:center;align-items:stretch;max-width:none;}
+  .sponsor-cta-buttons .cta-btn{width:340px;min-width:0;}
+}
+/* ---------- スポンサー掲載 ---------- */
+.sponsor-list{display:flex;flex-direction:column;gap:14px;margin-top:8px;}
+.sponsor-item{
+  display:flex;gap:18px;align-items:flex-start;
+  background:var(--white);border:1px solid var(--line);border-radius:12px;padding:20px;
+}
+.sponsor-logo-wrap{flex:0 0 300px;}
+.sponsor-logo{width:300px;height:300px;object-fit:contain;background:#fff;border:1px solid var(--line2);border-radius:8px;}
+.sponsor-info{flex:1;min-width:0;}
+.sponsor-name{font-size:16px;font-weight:700;margin-bottom:6px;}
+.sponsor-desc{font-size:13.5px;color:#444;line-height:1.8;margin-bottom:0;}
+@media (max-width:479px){
+  .sponsor-item{flex-direction:column;align-items:center;text-align:center;}
+}
+.sponsor-name-list{margin-top:26px;background:var(--white);border:1px solid var(--line);border-radius:12px;padding:20px 22px;}
+.sponsor-name-list-label{font-weight:700;font-size:14px;color:var(--deep);margin-bottom:10px;}
+.sponsor-name-items{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:6px 22px;}
+.sponsor-name-items li{margin:0;font-size:14px;}
+
+/* ---------- 注目リターン詳細 ---------- */
+#returns{scroll-margin-top:calc(var(--hh) + 12px);}
+.return-block{margin-bottom:36px;}
+.return-block:last-of-type{margin-bottom:0;}
+.return-img{margin:14px 0;}
+.return-img img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:var(--white);}
+/* ==========================================================================
+   アクセス・お問い合わせページ
+========================================================================== */
+.map-embed{margin:16px 0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--white);}
+.map-embed iframe{width:100%;height:340px;border:0;display:block;}
+.map-link-btn{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--deep);border:1.5px solid var(--deep);border-radius:100px;padding:10px 22px;transition:background .2s;}
+.map-link-btn:hover{background:rgba(177,18,38,.06);text-decoration:none;color:var(--deep);}
+.contact-box{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:26px 24px;text-align:center;}
+.contact-box p{margin-bottom:10px;}
+.contact-email{display:inline-block;font-size:clamp(16px,3.4vw,20px);font-weight:700;color:var(--deep);background:rgba(177,18,38,.05);border-radius:8px;padding:10px 18px;margin:8px 0 10px;letter-spacing:.03em;word-break:break-all;}
+
+/* ==========================================================================
+   物販・出店ページ（goods.html）
+========================================================================== */
+.goods-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:8px;}
+@media (min-width:768px){.goods-grid{grid-template-columns:repeat(3,1fr);}}
+.goods-card{background:var(--white);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;}
+.goods-img{aspect-ratio:1/1;object-fit:cover;width:100%;background:#f3f0ea;border-bottom:1px solid var(--line2);}
+.goods-body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:4px;flex:1;}
+.goods-badge{display:inline-block;font-size:11px;font-weight:700;color:var(--deep);border:1px solid var(--deep);border-radius:100px;padding:2px 10px;margin-bottom:2px;align-self:flex-start;}
+.goods-name{font-size:14.5px;font-weight:700;}
+.goods-price{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--deep);line-height:1.3;}
+.goods-price small{font-size:12px;font-family:'Shippori Mincho',serif;color:var(--sub);}
+.goods-desc{font-size:12.5px;color:#555;line-height:1.7;margin-bottom:0;}
+
+/* ==========================================================================
+   画像掲載（演技順・タイムテーブル）と2日間開催用の日付見出し
+========================================================================== */
+.page-image{margin:14px 0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--white);}
+.page-image img{width:100%;height:auto;display:block;}
+.page-image--a4{max-width:640px;margin-left:auto;margin-right:auto;}
+.page-image-note{font-size:13px;color:var(--sub);margin-top:12px;text-align:center;}
+
+.day-head{display:flex;align-items:center;gap:12px;margin:38px 0 6px;}
+.day-head:first-of-type{margin-top:0;}
+.day-badge{font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:.12em;background:var(--deep);color:#fff;border-radius:100px;padding:4px 18px;}
+.day-badge.white{background:var(--white);color:var(--deep);border:1.5px solid var(--deep);}
+.day-date{font-size:clamp(16px,2.4vw,19px);font-weight:700;}
+
+/* ==========================================================================
+   運営ページ（about.html）
+========================================================================== */
+.division-grid{display:grid;grid-template-columns:1fr;gap:12px;margin-top:8px;}
+@media (min-width:600px){.division-grid{grid-template-columns:repeat(2,1fr);}}
+@media (min-width:900px){.division-grid{grid-template-columns:repeat(3,1fr);}}
+.division-card{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:18px 20px;}
+.div-name{font-size:16px;font-weight:700;margin-bottom:4px;}
+.div-role{font-size:12.5px;color:var(--deep);font-weight:600;margin-bottom:6px;}
+.div-desc{font-size:13px;color:#555;line-height:1.8;margin-bottom:0;}
