@@ -259,6 +259,8 @@ footer::before{content:'';position:absolute;top:-1px;left:0;right:0;height:4px;b
 .footer-links{display:flex;justify-content:center;flex-wrap:wrap;gap:4px 14px;margin-bottom:20px;margin-top:18px;}
 .footer-links a{font-size:12px;color:var(--sub);padding:4px;}
 .footer-links a:hover{color:var(--deep);text-decoration:none;}
+.footer-sns{display:flex;justify-content:center;gap:24px;margin-bottom:16px;}
+.footer-sns a{font-size:13px;color:var(--deep);font-weight:600;}
 .copyright{font-size:11px;color:var(--sub);letter-spacing:.08em;}
 
 /* ==========================================================================
