@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Yuji+Syuku&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;1,300;1,500&display=swap" rel="stylesheet">
 <link rel="icon" href="assets/aja-logo.PNG" type="image/png">
-<link rel="stylesheet" href="assets/style.css?v=20261020">
+<link rel="stylesheet" href="assets/style.css?v=20261024">
 </head>
 <body>
 
@@ -107,73 +107,45 @@
     <div class="sec-head">
       <div class="ja">オフィシャルグッズ</div>
     </div>
-    <p>大会限定のオフィシャルグッズを、会場にて販売します。</p>
+    <p>第5回大会限定のオリジナルグッズを販売します。パーカー・トートバッグは事前予約も受け付けています。</p>
 
-    <!-- ================================================================
-      ▼ 準備中表示：商品が決まったらこのブロックを削除 ▼
-    ================================================================= -->
-    <div class="rule-box" style="text-align:center">
-      <p style="margin-bottom:0">商品ラインナップは決まり次第、本ページにてお知らせします。</p>
+    <!-- ▼ グッズ一覧画像：assets/goods/goods-list.webp に配置（1600×1131px） ▼ -->
+    <div class="goods-list-image">
+      <img src="assets/goods/goods-list.webp" width="1600" height="1131" alt="第5回紅白ジャグリング大会オリジナルグッズ一覧。パーカー各5,500円（予約販売：白・赤・黒、サイズS/M/L/XL／当日販売：黒、FREE SIZE）、トートバッグ2,500円（予約販売・当日販売）、アンブレラマーカー各500円（当日販売）、クリアマルチケース1,200円（当日販売）。予約販売は2026年11月7日（土）まで。">
     </div>
 
-    <!-- ================================================================
-      ▼ 商品カード：商品が決まったらコメントを外し、内容を書き換え ▼
-      ・画像は assets/goods/ フォルダに配置（正方形推奨）
-      ・goods-card をコピーして商品数分並べる
-      ・「会場限定」「事前予約可」などのバッジは goods-badge（不要なら行ごと削除）
-      ・価格が未定の場合は goods-price の行を削除してもレイアウトは崩れません
-    ================================================================= -->
-    <!--
-    <div class="goods-grid">
-      <div class="goods-card">
-        <img class="goods-img" src="assets/goods/rubberband.jpg" alt="ラバーバンド（紅・白）">
-        <div class="goods-body">
-          <span class="goods-badge">会場限定</span>
-          <p class="goods-name">ラバーバンド（紅・白）</p>
-          <p class="goods-price">¥800 <small>／ セット ¥1,500</small></p>
-          <p class="goods-desc">紅白2色のラバーバンド。セット購入で¥100お得です。</p>
-        </div>
-      </div>
-      <div class="goods-card">
-        <img class="goods-img" src="assets/goods/masu.jpg" alt="紅白枡（三勺）">
-        <div class="goods-body">
-          <span class="goods-badge">会場限定</span>
-          <p class="goods-name">紅白枡（三勺）</p>
-          <p class="goods-price">¥800</p>
-          <p class="goods-desc">大会ロゴ入りの木製枡です。</p>
-        </div>
-      </div>
-    </div>
-    -->
-
-    <!-- ================================================================
-      ▼ 販売方法：詳細が決まったらコメントを外し、内容を書き換え ▼
-    ================================================================= -->
-    <!--
     <p class="sub-head">販売方法</p>
-    <div class="rule-box">
-      <p><strong style="color:var(--deep)">〇 会場販売</strong></p>
-      <p>会場ロビーの物販ブースにて販売します。</p>
-      <p style="margin-bottom:0" class="note-text">※ 商品は数に限りがございます。売り切れの際はご容赦ください。</p>
-    </div>
-    -->
 
-    <!-- ================================================================
-      ▼ STORES事前予約：実施する場合のみコメントを外し、URLを設定 ▼
-    ================================================================= -->
-    <!--
+    <!-- ▼ 事前予約（Googleフォーム） ▼ -->
     <div class="rule-box">
-      <p><strong style="color:var(--deep)">〇 事前予約（STORES）</strong></p>
-      <p>一部商品は、STORESにて事前予約を受け付けます。ご予約いただいた商品は、当日会場の物販ブースにてお渡しします。</p>
-      <p class="note-text">予約期間：20XX年XX月XX日（X）〜 XX月XX日（X）23:59</p>
+      <p><strong style="color:var(--deep)">〇 事前予約（パーカー・トートバッグ）</strong></p>
+      <p>Googleフォームにて事前予約を受け付けます。ご予約いただいた商品は、大会当日に会場の物販ブースにてお渡しします。</p>
+      <p>お支払いは、商品お渡しの際に当日会場にてお願いします。</p>
+      <ul>
+        <li>パーカー（白・赤・黒／S・M・L・XL）各 ¥5,500</li>
+        <li>トートバッグ ¥2,500</li>
+      </ul>
+      <p>予約期限：<strong style="color:var(--deep)">2026年11月7日（土）まで</strong></p>
       <div style="margin-top:16px;display:flex;justify-content:center">
-        <a href="https://bluehat1103.stores.jp/" target="_blank" rel="noopener" class="cta-btn" style="width:100%;max-width:320px">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfhQ-EoDjlPk8GjPzeXkKfHLHuDTSZI-ZUJ88i9y4uT7DPbkA/viewform" target="_blank" rel="noopener" class="cta-btn" style="width:100%;max-width:320px">
           事前予約はこちら
-          <span class="cta-btn-sub">外部リンク（STORES）が開きます</span>
+          <span class="cta-btn-sub">外部リンク（Googleフォーム）が開きます</span>
         </a>
       </div>
     </div>
-    -->
+
+    <!-- ▼ 当日販売 ▼ -->
+    <div class="rule-box">
+      <p><strong style="color:var(--deep)">〇 当日販売</strong></p>
+      <p>大会当日、会場の物販ブースにて販売します。</p>
+      <ul>
+        <li>パーカー（黒／FREE SIZE）¥5,500</li>
+        <li>トートバッグ ¥2,500</li>
+        <li>アンブレラマーカー 各 ¥500</li>
+        <li>クリアマルチケース ¥1,200</li>
+      </ul>
+      <p class="note-text">※ 当日販売分は数に限りがございます。売り切れの際はご容赦ください。</p>
+    </div>
   </div>
 </section>
 
