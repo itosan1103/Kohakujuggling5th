@@ -527,7 +527,7 @@ footer::before{content:'';position:absolute;top:-1px;left:0;right:0;height:4px;b
 .faq-item summary::after{content:"";position:absolute;right:20px;top:50%;width:8px;height:8px;border-right:2px solid var(--sub);border-bottom:2px solid var(--sub);transform:translateY(-70%) rotate(45deg);transition:transform .2s;}
 .faq-item[open] summary::after{transform:translateY(-30%) rotate(-135deg);}
 .faq-item summary:focus-visible{outline:2px solid var(--deep);outline-offset:-2px;}
-.faq-a{position:relative;padding:0 20px 16px 46px;color:var(--ink);line-height:1.8;}
+.faq-a{position:relative;padding:0 20px 16px 46px;color:var(--ink);line-height:1.8;font-weight:500;}
 .faq-a::before{content:"A";position:absolute;left:16px;top:-3px;font-family:"Cormorant Garamond",serif;font-size:20px;font-weight:600;color:var(--gold);}
 .faq-a p{margin:0;}
 .faq-a a{color:var(--deep);text-decoration:underline;}
