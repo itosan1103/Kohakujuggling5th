@@ -450,9 +450,9 @@ footer::before{content:'';position:absolute;top:-1px;left:0;right:0;height:4px;b
 @media (max-width:479px){
   .sponsor-item{flex-direction:column;align-items:center;text-align:center;}
 }
-.sponsor-name-list{margin-top:26px;background:var(--white);border:1px solid var(--line);border-radius:12px;padding:20px 22px;}
+.sponsor-name-list{margin-top:26px;background:var(--white);border:1px solid var(--line);border-radius:12px;padding:20px 22px;text-align:center;}
 .sponsor-name-list-label{font-weight:700;font-size:14px;color:var(--deep);margin-bottom:10px;}
-.sponsor-name-items{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:6px 22px;}
+.sponsor-name-items{list-style:none;padding:0;display:flex;flex-direction:column;align-items:center;gap:6px;}
 .sponsor-name-items li{margin:0;font-size:14px;}
 
 /* ---------- 注目リターン詳細 ---------- */
